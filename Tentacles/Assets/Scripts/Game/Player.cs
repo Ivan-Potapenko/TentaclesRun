@@ -45,6 +45,10 @@ namespace Game {
             }
         }
 
+        public void Stop(float stopPercentage) {
+
+        }
+
         public void Drop() {
             _canMove = false;
             Debug.Log("Drop");
