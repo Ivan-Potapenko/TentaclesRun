@@ -15,6 +15,9 @@ namespace Game {
         [SerializeField]
         private float _secondsBetwinCloseEye = 3f;
 
+        [SerializeField]
+        private PlayerStopButtonsController _playerStopButtonsController;
+
         private void OnEnable() {
             StartCoroutine(OpenEyeCoroutine());
         }
@@ -28,6 +31,7 @@ namespace Game {
                 var randomWaitOffset = Random.Range(-_secondsBetwinOpenEye / 2, _secondsBetwinOpenEye / 5);
                 yield return new WaitForSeconds(_secondsBetwinOpenEye + randomWaitOffset);
                 _cthulhu.OpenEye();
+                _playerStopButtonsController.StartBraking();
 
                 yield return new WaitForSeconds(_secondsBetwinCloseEye);
                 _cthulhu.CloseEye();

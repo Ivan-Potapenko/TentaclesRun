@@ -53,7 +53,6 @@ namespace Game {
                 if (!Input.GetKeyDown(button.Value)) {
                     continue;
                 }
-                Debug.Log(button.Key);
                 SetMoveDirection(button.Key);
                 return;
             }

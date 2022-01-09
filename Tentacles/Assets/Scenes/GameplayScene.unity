@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &777521442 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5710122563284633604, guid: 88a1d106895f5a84fa7a936d834a105d, type: 3}
+  m_PrefabInstance: {fileID: 866571874920859050}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23e481e06ea81e5499211507a7a6c653, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1356975401 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5666853822232058453, guid: 8126d1e7627bde34ebe3cb5c725ac0f8, type: 3}
@@ -134,6 +145,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70458cd8204d4fc4eaafcf3db5af2555, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1751104440 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5666853822232058454, guid: 8126d1e7627bde34ebe3cb5c725ac0f8, type: 3}
+  m_PrefabInstance: {fileID: 5666853822362628295}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ad523c231db7994e824ce383f18476e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1935453975
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1935453977}
+  - component: {fileID: 1935453976}
+  m_Layer: 0
+  m_Name: DifficultyController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1935453976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935453975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22b6e87ac7d02124abff01e4fb7bf995, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerController: {fileID: 1751104440}
+--- !u!4 &1935453977
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935453975}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.6659544, y: -1.9353223, z: 3055.429}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &866571874920859050
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -201,6 +267,10 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 1356975401}
+    - target: {fileID: 5710122563284633604, guid: 88a1d106895f5a84fa7a936d834a105d, type: 3}
+      propertyPath: _difficultyProgressController
+      value: 
+      objectReference: {fileID: 1935453976}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88a1d106895f5a84fa7a936d834a105d, type: 3}
 --- !u!1001 &2047571488733456559
@@ -210,6 +280,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2047571490132499246, guid: fdb4548b329c8644290948db5fbaa350, type: 3}
+      propertyPath: _playerStopButtonsController
+      value: 
+      objectReference: {fileID: 777521442}
     - target: {fileID: 2047571490132499409, guid: fdb4548b329c8644290948db5fbaa350, type: 3}
       propertyPath: m_RootOrder
       value: 3

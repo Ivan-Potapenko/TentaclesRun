@@ -9,10 +9,7 @@ namespace Game {
         [SerializeField]
         private PlayerController _playerController;
 
-       
-
-
-
+        public int DifficultyLevel => 0;
     }
 }
 
