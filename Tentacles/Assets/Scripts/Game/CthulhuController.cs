@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Game {
 
-    public class CthulhuControler : MonoBehaviour {
+    public class CthulhuController : MonoBehaviour {
 
         [SerializeField]
         private Cthulhu _cthulhu;

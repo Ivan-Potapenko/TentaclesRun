@@ -47,9 +47,13 @@ MonoBehaviour:
   _tablets: {fileID: 2366199546364216265, guid: df9792c4e124e2c458e03ffd8c24b869, type: 3}
   _showGizmos: 0
   _spawnZones:
-  - center: {x: -3.72, y: 0.07}
-    radius: 0.86
-  - center: {x: 2.6, y: 0.19}
-    radius: 0.86
+  - center: {x: -3.78, y: 0.29}
+    radius: 0.71
+  - center: {x: 3.39, y: 0.23}
+    radius: 0.52
+  - center: {x: 2.53, y: 0.72}
+    radius: 0.52
+  - center: {x: -3.23, y: -0.64}
+    radius: 0.52
   - center: {x: -0.53, y: 0.1}
     radius: 2.72
