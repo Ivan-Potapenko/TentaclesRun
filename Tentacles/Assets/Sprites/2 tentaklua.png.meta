@@ -1,7 +1,22 @@
 fileFormatVersion: 2
 guid: c73bcc588ffd8f84db573ed846ddd83f
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -1982302518423987382
+    second: 2 tentaklua_0
+  - first:
+      213: -7733042375801140314
+    second: 2 tentaklua_1
+  - first:
+      213: -7204530088567347349
+    second: 2 tentaklua_2
+  - first:
+      213: 612467677041121269
+    second: 2 tentaklua_3
+  - first:
+      213: -2932767242656592836
+    second: 2 tentaklua_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -101,7 +116,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: 2 tentaklua_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 2
+        width: 33
+        height: 41
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4bd9f7bc527d74e0800000000000000
+      internalID: -1982302518423987382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2 tentaklua_1
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 2
+        width: 34
+        height: 40
+      alignment: 9
+      pivot: {x: 0.9705882, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ab845d3ee6bea490800000000000000
+      internalID: -7733042375801140314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2 tentaklua_2
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 2
+        width: 35
+        height: 39
+      alignment: 9
+      pivot: {x: 0.94285715, y: -0.025641026}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6764514e0e540c90800000000000000
+      internalID: -7204530088567347349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2 tentaklua_3
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 2
+        width: 34
+        height: 40
+      alignment: 9
+      pivot: {x: 0.9705882, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f7d1767b1cef7800800000000000000
+      internalID: 612467677041121269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2 tentaklua_4
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 2
+        width: 33
+        height: 41
+      alignment: 9
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3c4d843bb7bc47d0800000000000000
+      internalID: -2932767242656592836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
