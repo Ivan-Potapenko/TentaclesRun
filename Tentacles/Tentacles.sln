@@ -3,6 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{C5ECEC3B-7671-45B7-0B10-BDA21BDB951C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirenix.OdinValidator", "Sirenix.OdinValidator.csproj", "{26EC4A34-7495-4596-6558-A69BA33C9CDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirenix.OdinInspector.CompatibilityLayer.Editor", "Sirenix.OdinInspector.CompatibilityLayer.Editor.csproj", "{1CB9CB13-D7D1-C030-F7F3-D2A88D437D78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirenix.OdinInspector.Modules.UnityMathematics", "Sirenix.OdinInspector.Modules.UnityMathematics.csproj", "{BDB247EE-448C-24D6-217F-C38397830A71}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +19,18 @@ Global
 		{C5ECEC3B-7671-45B7-0B10-BDA21BDB951C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5ECEC3B-7671-45B7-0B10-BDA21BDB951C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5ECEC3B-7671-45B7-0B10-BDA21BDB951C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26EC4A34-7495-4596-6558-A69BA33C9CDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26EC4A34-7495-4596-6558-A69BA33C9CDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26EC4A34-7495-4596-6558-A69BA33C9CDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26EC4A34-7495-4596-6558-A69BA33C9CDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CB9CB13-D7D1-C030-F7F3-D2A88D437D78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CB9CB13-D7D1-C030-F7F3-D2A88D437D78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CB9CB13-D7D1-C030-F7F3-D2A88D437D78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CB9CB13-D7D1-C030-F7F3-D2A88D437D78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDB247EE-448C-24D6-217F-C38397830A71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDB247EE-448C-24D6-217F-C38397830A71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDB247EE-448C-24D6-217F-C38397830A71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDB247EE-448C-24D6-217F-C38397830A71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

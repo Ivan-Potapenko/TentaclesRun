@@ -16,14 +16,14 @@ namespace Game {
         private float _secondsBetwinCloseEye = 3f;
 
         private void OnEnable() {
-            StartCoroutine(OpenEyeCorutine());
+            StartCoroutine(OpenEyeCoroutine());
         }
 
         private void OnDisable() {
-            StopCoroutine(OpenEyeCorutine());
+            StopCoroutine(OpenEyeCoroutine());
         }
 
-        private IEnumerator OpenEyeCorutine() {
+        private IEnumerator OpenEyeCoroutine() {
             while (true) {
                 var randomWaitOffset = Random.Range(-_secondsBetwinOpenEye / 2, _secondsBetwinOpenEye / 5);
                 yield return new WaitForSeconds(_secondsBetwinOpenEye + randomWaitOffset);
