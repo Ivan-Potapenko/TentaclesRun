@@ -1,0 +1,7 @@
+﻿Tentacles/Library
+Tentacles/Temp
+Tentacles/obj
+Tentacles/Tentacles.sln
+Tentacles/Sirenix.OdinValidator.csproj
+*.csproj
+*.suo
