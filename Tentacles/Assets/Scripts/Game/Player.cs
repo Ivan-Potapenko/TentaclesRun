@@ -77,7 +77,7 @@ namespace Game {
         }
 
         public bool IsWaiting() {
-            return _stoppingRatio > 0;
+            return _stoppingRatio <= 0;
         }
 
         public void Move(Vector2 directionVector) {

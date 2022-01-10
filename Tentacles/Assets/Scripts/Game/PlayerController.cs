@@ -45,7 +45,7 @@ namespace Game {
         private void BehaviourUpdate() {
             GetInput();
             MovePlayer();
-            if (_cthulhu.EyeIsOpen && _player.IsWaiting()) {
+            if (_cthulhu.EyeIsOpen && !_player.IsWaiting()) {
                 _player.Die();
             }
         }

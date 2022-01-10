@@ -12,6 +12,9 @@ namespace Game {
         private Animator _eyeAnimator;
 
         [SerializeField]
+        private Player _player;
+
+        [SerializeField]
         private EventListener _updateEventListner;
 
         private void OnEnable() {
@@ -25,8 +28,9 @@ namespace Game {
         private void BehaviourUpdate() {
             if (_eyeAnimator.GetCurrentAnimatorStateInfo(0).IsName("EyeOpened")) {
                 _eyeIsOpen = true;
-            } else if (_eyeAnimator.GetCurrentAnimatorStateInfo(0).IsName("EyeClosed")) {
+            } else if (_eyeAnimator.GetCurrentAnimatorStateInfo(0).IsName("EyeCloses")) {
                 _eyeIsOpen = false;
+                _player.MoveAfterStop();
             }
         }
 

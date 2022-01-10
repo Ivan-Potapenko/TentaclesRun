@@ -304,6 +304,10 @@ PrefabInstance:
       propertyPath: _playerStopButtonsController
       value: 
       objectReference: {fileID: 777521442}
+    - target: {fileID: 2047571490132499247, guid: fdb4548b329c8644290948db5fbaa350, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 1356975401}
     - target: {fileID: 2047571490132499409, guid: fdb4548b329c8644290948db5fbaa350, type: 3}
       propertyPath: m_RootOrder
       value: 3
