@@ -27,7 +27,7 @@ namespace Game {
         }
 
         private IEnumerator OpenEyeCoroutine() {
-            while (true) {
+            while (!_cthulhu.PlayerDie) {
                 var randomWaitOffset = Random.Range(-_secondsBetwinOpenEye / 2, _secondsBetwinOpenEye / 5);
                 yield return new WaitForSeconds(_secondsBetwinOpenEye + randomWaitOffset);
                 _cthulhu.OpenEye();

@@ -45,8 +45,9 @@ namespace Game {
         private void BehaviourUpdate() {
             GetInput();
             MovePlayer();
-            if (_cthulhu.EyeIsOpen && !_player.IsWaiting()) {
+            if (_cthulhu.EyeIsOpen && !_player.IsWaiting() || _player.MentalLevel <= 0) {
                 _player.Die();
+                _cthulhu.PlayerDie = true;
             }
         }
 
@@ -62,7 +63,7 @@ namespace Game {
                 SetMoveDirection(button.Key);
                 return;
             }
-        }   
+        }
 
         private void SetMoveDirection(MoveDirection moveDirection) {
             _move = true;

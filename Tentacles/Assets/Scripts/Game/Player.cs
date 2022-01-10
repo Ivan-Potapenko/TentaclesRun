@@ -62,11 +62,13 @@ namespace Game {
         public void Fall() {
             _canMove = false;
             _animator.SetBool("fall", true);
+            StopCoroutine(GoCrazyCoroutine());
         }
 
         public void Die() {
             _canMove = false;
-            _animator.SetBool("DeathPlayer", true); ;
+            _animator.SetBool("DeathPlayer", true);
+            StopCoroutine(GoCrazyCoroutine());
         }
 
         public void Stop(float stopPercentage) {

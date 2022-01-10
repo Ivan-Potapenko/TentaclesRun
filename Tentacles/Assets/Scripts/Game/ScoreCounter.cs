@@ -2,29 +2,35 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreCounter : MonoBehaviour
-{
-    private int score = 0;
+namespace Game {
 
-    [SerializeField]
-    private Text _scoreText;
+    public class ScoreCounter : MonoBehaviour {
+        private int score = 0;
 
-    [SerializeField]
-    private float _secondsToWait = 1;
+        [SerializeField]
+        private Text _scoreText;
 
-    private void OnEnable() {
-        StartCoroutine(CountScore());
-    }
+        [SerializeField]
+        private Cthulhu _cthulhu;
 
-    private void OnDisable() {
-        StopCoroutine(CountScore());
-    }
+        [SerializeField]
+        private float _secondsToWait = 1;
 
-    private IEnumerator CountScore() {
-        while(true) {
-            score++;
-            _scoreText.text ="Score:" + score.ToString();
-            yield return new WaitForSeconds(_secondsToWait);
+        private void OnEnable() {
+            StartCoroutine(CountScore());
+        }
+
+        private void OnDisable() {
+            StopCoroutine(CountScore());
+        }
+
+        private IEnumerator CountScore() {
+            while (!_cthulhu.PlayerDie) {
+                score++;
+                _scoreText.text = "Score:" + score.ToString();
+                yield return new WaitForSeconds(_secondsToWait);
+            }
         }
     }
+
 }

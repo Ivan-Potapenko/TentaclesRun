@@ -1,5 +1,7 @@
 using UnityEngine;
 using Events;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace Game {
 
@@ -14,10 +16,23 @@ namespace Game {
         [SerializeField]
         private GameObject _lose;
 
-        private Animator _loseAnimator;
+        [SerializeField]
+        private Button _restartButton;
+
+        [SerializeField]
+        private Button _menuButton;
 
         private void Start() {
-            _loseAnimator = _lose.GetComponent<Animator>();
+            _menuButton.onClick.AddListener(LoadMenu);
+            _restartButton.onClick.AddListener(LoadGameplayScene);
+        }
+
+        private void LoadMenu() {
+            SceneManager.LoadScene("MenuScene");
+        }
+
+        private void LoadGameplayScene() {
+            SceneManager.LoadScene("GameplayScene");
         }
 
         private void OnEnable() {
@@ -33,9 +48,6 @@ namespace Game {
                 _lose.SetActive(true);
             } else if (_player.Animator.GetCurrentAnimatorStateInfo(0).IsName("ufterFatal")) {
                 _lose.SetActive(true);
-            }
-            if (_loseAnimator.GetCurrentAnimatorStateInfo(0).IsName("loseUfter")) {
-                Time.timeScale = 0;
             }
         }
     }

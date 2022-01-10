@@ -72,16 +72,13 @@ namespace Game {
         }
 
         private bool OnButtonClick() {
-            Debug.Log("in");
             if (Input.GetMouseButtonDown(0)) {
                 var ray = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 var hit = Physics2D.Raycast(ray, Vector2.zero);
                 var gameObject = hit.collider?.gameObject;
-                Debug.Log("ddddddddddn");
                 if (gameObject!= null && gameObject.TryGetComponent<StopButton>(out var stopButton)) {
                     stopButton.gameObject.SetActive(false);
                     _player.Stop(1f / _activeButtonsInRound);
-                    Debug.Log("Click");
                     return true;
                 }
             }

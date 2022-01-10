@@ -14,6 +14,8 @@ namespace Game {
         [SerializeField]
         private Player _player;
 
+        public bool PlayerDie = false;
+
         [SerializeField]
         private EventListener _updateEventListner;
 
@@ -35,11 +37,17 @@ namespace Game {
         }
 
         public void OpenEye() {
+            if(PlayerDie) {
+                return;
+            }
             _eyeAnimator.SetBool("Open", true);
             _eyeAnimator.SetBool("Close", false);
         }
 
         public void CloseEye() {
+            if (PlayerDie) {
+                return;
+            }
             _eyeAnimator.SetBool("Open", false);
             _eyeAnimator.SetBool("Close", true);
         }
