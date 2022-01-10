@@ -12,6 +12,11 @@ namespace Game {
 
         private Rigidbody2D _rigidbody;
 
+        private float _stoppingRatio = 1;
+
+        [SerializeField]
+        private Animator _animator;
+
         [SerializeField]
         private int _maxMentalLevel = 100;
 
@@ -35,11 +40,11 @@ namespace Game {
 
         private void OnCollisionEnter2D(Collision2D collision) {
             if (collision.gameObject.TryGetComponent<LandBorder>(out var landBorder)) {
-                Drop();
+                Fall();
             }
         }
 
-        private void RecoveryMental(int recoveryLevel) {
+        public void RecoveryMental(int recoveryLevel) {
             _mentalLevel += recoveryLevel;
             if (_mentalLevel > _maxMentalLevel) {
                 _mentalLevel = _maxMentalLevel;
@@ -47,19 +52,32 @@ namespace Game {
         }
 
         private IEnumerator GoCrazyCoroutine() {
-            while(true) {
+            while (true) {
                 _mentalLevel--;
-                yield return new WaitForSeconds(1f);
+                yield return new WaitForSeconds(0.5f);
             }
         }
 
-        public void Stop(float stopPercentage) {
-
+        public void Fall() {
+            _canMove = false;
+            _animator.SetBool("fall", true);
         }
 
-        public void Drop() {
+        public void Die() {
             _canMove = false;
-            Debug.Log("Drop");
+            _animator.SetBool("DeathPlayer", true); ;
+        }
+
+        public void Stop(float stopPercentage) {
+            _stoppingRatio -= 1 * stopPercentage;
+        }
+
+        public void MoveAfterStop() {
+            _stoppingRatio = 1;
+        }
+
+        public bool IsWaiting() {
+            return _stoppingRatio > 0;
         }
 
         public void Move(Vector2 directionVector) {
@@ -68,7 +86,7 @@ namespace Game {
                 _rigidbody.velocity = Vector2.zero;
                 return;
             }
-            _rigidbody.velocity = _moveSpeed * directionVector;
+            _rigidbody.velocity = _moveSpeed * directionVector * _stoppingRatio;
         }
 
     }

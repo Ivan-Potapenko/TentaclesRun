@@ -145,15 +145,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70458cd8204d4fc4eaafcf3db5af2555, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1751104440 stripped
+--- !u!114 &1664945879 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5666853822232058454, guid: 8126d1e7627bde34ebe3cb5c725ac0f8, type: 3}
-  m_PrefabInstance: {fileID: 5666853822362628295}
+  m_CorrespondingSourceObject: {fileID: 2047571490132499247, guid: fdb4548b329c8644290948db5fbaa350, type: 3}
+  m_PrefabInstance: {fileID: 2047571488733456559}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ad523c231db7994e824ce383f18476e, type: 3}
+  m_Script: {fileID: 11500000, guid: f5ac149175b5a554cb084dc9fc3a96cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1935453975
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22b6e87ac7d02124abff01e4fb7bf995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerController: {fileID: 1751104440}
+  _player: {fileID: 1356975401}
 --- !u!4 &1935453977
 Transform:
   m_ObjectHideFlags: 0
@@ -297,6 +297,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2047571490132499246, guid: fdb4548b329c8644290948db5fbaa350, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 1356975401}
+    - target: {fileID: 2047571490132499246, guid: fdb4548b329c8644290948db5fbaa350, type: 3}
       propertyPath: _playerStopButtonsController
       value: 
       objectReference: {fileID: 777521442}
@@ -405,6 +409,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5666853822232058454, guid: 8126d1e7627bde34ebe3cb5c725ac0f8, type: 3}
+      propertyPath: _cthulhu
+      value: 
+      objectReference: {fileID: 1664945879}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8126d1e7627bde34ebe3cb5c725ac0f8, type: 3}
 --- !u!1001 &6321990962395077368

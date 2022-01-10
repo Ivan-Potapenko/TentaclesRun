@@ -7,9 +7,9 @@ namespace Game {
     public class DifficultyProgressController : MonoBehaviour {
 
         [SerializeField]
-        private PlayerController _playerController;
+        private Player _player;
 
-        public int DifficultyLevel => 0;
+        public int DifficultyLevel => 3 - (((((int)_player.MentalLevel)/30) +1) > 3?  3 : ((((int)_player.MentalLevel) / 30) + 1));
     }
 }
 

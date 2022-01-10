@@ -34,7 +34,7 @@ namespace Game {
                 case 1:
                     ActivateRandomButtons(3);
                     break;
-                case 3:
+                case 2:
                     ActivateAllButtons();
                     break;
             }

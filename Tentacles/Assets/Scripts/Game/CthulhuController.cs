@@ -10,6 +10,9 @@ namespace Game {
         private Cthulhu _cthulhu;
 
         [SerializeField]
+        private Player _player;
+
+        [SerializeField]
         private float _secondsBetwinOpenEye = 10f;
 
         [SerializeField]
@@ -32,9 +35,10 @@ namespace Game {
                 yield return new WaitForSeconds(_secondsBetwinOpenEye + randomWaitOffset);
                 _cthulhu.OpenEye();
                 _playerStopButtonsController.StartBraking();
-
                 yield return new WaitForSeconds(_secondsBetwinCloseEye);
                 _cthulhu.CloseEye();
+                yield return new WaitForSeconds(1f);
+                _player.MoveAfterStop();
             }
         }
     }

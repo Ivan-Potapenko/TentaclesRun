@@ -18,6 +18,9 @@ namespace Game {
         private Player _player;
 
         [SerializeField]
+        private Cthulhu _cthulhu;
+
+        [SerializeField]
         private EventListener _updateEventListner;
 
         private Dictionary<MoveDirection, KeyCode> _control = new Dictionary<MoveDirection, KeyCode> {
@@ -42,6 +45,9 @@ namespace Game {
         private void BehaviourUpdate() {
             GetInput();
             MovePlayer();
+            if (_cthulhu.EyeIsOpen && _player.IsWaiting()) {
+                _player.Die();
+            }
         }
 
         private void GetInput() {
