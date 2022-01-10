@@ -263,6 +263,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4620061969744459559, guid: 88a1d106895f5a84fa7a936d834a105d, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 1356975401}
     - target: {fileID: 5710122563284633604, guid: 88a1d106895f5a84fa7a936d834a105d, type: 3}
       propertyPath: _player
       value: 
@@ -271,6 +275,14 @@ PrefabInstance:
       propertyPath: _difficultyProgressController
       value: 
       objectReference: {fileID: 1935453976}
+    - target: {fileID: 7255266684951442214, guid: 88a1d106895f5a84fa7a936d834a105d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7255266684951442214, guid: 88a1d106895f5a84fa7a936d834a105d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88a1d106895f5a84fa7a936d834a105d, type: 3}
 --- !u!1001 &2047571488733456559

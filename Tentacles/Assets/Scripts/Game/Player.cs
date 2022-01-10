@@ -23,6 +23,7 @@ namespace Game {
         private void Start() {
             _mentalLevel = _maxMentalLevel;
             _rigidbody = GetComponent<Rigidbody2D>();
+            StartCoroutine(GoCrazyCoroutine());
         }
 
         private void OnTriggerEnter2D(Collider2D collision) {
@@ -42,6 +43,13 @@ namespace Game {
             _mentalLevel += recoveryLevel;
             if (_mentalLevel > _maxMentalLevel) {
                 _mentalLevel = _maxMentalLevel;
+            }
+        }
+
+        private IEnumerator GoCrazyCoroutine() {
+            while(true) {
+                _mentalLevel--;
+                yield return new WaitForSeconds(1f);
             }
         }
 
