@@ -16,6 +16,7 @@ namespace Game {
 
         [SerializeField]
         private Animator _animator;
+        public Animator Animator => _animator;
 
         [SerializeField]
         private int _maxMentalLevel = 100;
