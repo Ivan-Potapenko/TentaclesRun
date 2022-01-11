@@ -660,6 +660,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eyeAnimator: {fileID: 2047571489482389400}
+  _player: {fileID: 0}
+  PlayerDie: 0
   _updateEventListner: {fileID: 2047571490132499408}
 --- !u!114 &2047571490132499408
 MonoBehaviour:
@@ -688,7 +690,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cthulhu: {fileID: 2047571490132499247}
   _secondsBetwinOpenEye: 10
-  _secondsBetwinCloseEye: 3
+  _secondsBetwinCloseEye: 5
+  _playerStopButtonsController: {fileID: 0}
 --- !u!1 &2047571490146683115
 GameObject:
   m_ObjectHideFlags: 0

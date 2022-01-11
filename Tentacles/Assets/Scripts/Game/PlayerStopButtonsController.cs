@@ -62,7 +62,7 @@ namespace Game {
             _isBraking = true;
             var activeButtons = _activeButtonsInRound;
             while (activeButtons > 0) {
-                if (OnButtonClick()) {
+                if (OnTouchClick()) {
                     activeButtons--;
                 }
                 yield return null;
@@ -81,6 +81,32 @@ namespace Game {
                     _player.Stop(1f / _activeButtonsInRound);
                     return true;
                 }
+            }
+            return false;
+        }
+
+        private bool OnTouchClick()
+        {
+            if (Input.touchCount>0)
+            {
+                var touches = Input.touches;
+                for (int i = 0; i <touches.Length ; i++)
+                {
+                    if (touches[i].phase != TouchPhase.Began)
+                    {
+                        continue;
+                    }
+                    var ray = Camera.main.ScreenToWorldPoint(touches[i].position);
+                    var hit = Physics2D.Raycast(ray, Vector2.zero);
+                    var gameObject = hit.collider?.gameObject;
+                    if (gameObject != null && gameObject.TryGetComponent<StopButton>(out var stopButton))
+                    {
+                        stopButton.gameObject.SetActive(false);
+                        _player.Stop(1f / _activeButtonsInRound);
+                        return true;
+                    }
+                }
+                
             }
             return false;
         }

@@ -15,6 +15,11 @@ namespace Game {
         }
 
         [SerializeField]
+        private Joystick _joystick;
+
+        private Vector2 _direction;
+
+        [SerializeField]
         private Player _player;
 
         [SerializeField]
@@ -44,7 +49,7 @@ namespace Game {
 
         private void BehaviourUpdate() {
             GetInput();
-            MovePlayer();
+            MovePlayer(_direction);
             if (_cthulhu.EyeIsOpen && !_player.IsWaiting() || _player.MentalLevel <= 0) {
                 _player.Die();
                 _cthulhu.PlayerDie = true;
@@ -52,7 +57,20 @@ namespace Game {
         }
 
         private void GetInput() {
-            CheckKeyDown();
+            //CheckKeyDown();
+            CheckJoystickDirection();
+        }
+
+        private void CheckJoystickDirection()
+        {
+            var direction = _joystick.Direction.normalized;
+            if (direction == Vector2.zero)
+            {
+                return;
+            }
+            _direction = _joystick.Direction.normalized;
+            _move = true;
+           
         }
 
         private void CheckKeyDown() {
@@ -68,6 +86,7 @@ namespace Game {
         private void SetMoveDirection(MoveDirection moveDirection) {
             _move = true;
             _moveDirection = moveDirection;
+
         }
 
         private void MovePlayer() {
@@ -88,6 +107,15 @@ namespace Game {
                     _player.Move(Vector2.down);
                     break;
             }
+        }
+
+        private void MovePlayer(Vector2 direction)
+        {
+            if (!_move)
+            {
+                return;
+            }
+             _player.Move(direction);
         }
     }
 }
