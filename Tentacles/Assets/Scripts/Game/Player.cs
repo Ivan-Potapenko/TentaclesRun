@@ -8,11 +8,15 @@ namespace Game {
     public class Player : MonoBehaviour {
 
         [SerializeField]
+        private Cthulhu _cthulhu;
+
+        [SerializeField]
         private float _moveSpeed;
 
         private Rigidbody2D _rigidbody;
 
-        private float _stoppingRatio = 1;
+        [SerializeField]
+        public float _stoppingRatio = 1;
 
         [SerializeField]
         private Animator _animator;
@@ -41,7 +45,9 @@ namespace Game {
 
         private void OnCollisionEnter2D(Collision2D collision) {
             if (collision.gameObject.TryGetComponent<LandBorder>(out var landBorder)) {
+                _cthulhu.PlayerDie = true;
                 Fall();
+
             }
         }
 
@@ -60,19 +66,24 @@ namespace Game {
         }
 
         public void Fall() {
+            
             _canMove = false;
             _animator.SetBool("fall", true);
             StopCoroutine(GoCrazyCoroutine());
         }
 
         public void Die() {
+           
             _canMove = false;
             _animator.SetBool("DeathPlayer", true);
             StopCoroutine(GoCrazyCoroutine());
         }
 
         public void Stop(float stopPercentage) {
+            
+    
             _stoppingRatio -= 1 * stopPercentage;
+           
         }
 
         public void MoveAfterStop() {
@@ -80,6 +91,8 @@ namespace Game {
         }
 
         public bool IsWaiting() {
+            if (_stoppingRatio <= 0.1)
+                _stoppingRatio = 0;
             return _stoppingRatio <= 0;
         }
 

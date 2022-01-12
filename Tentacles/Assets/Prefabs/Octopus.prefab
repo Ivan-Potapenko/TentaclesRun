@@ -230,7 +230,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2047571489453674677}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.1434073, y: 3.4323862, z: 35.74079}
+  m_LocalPosition: {x: -2.13, y: 3.39, z: 35.74079}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2047571490219501779}
@@ -690,7 +690,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cthulhu: {fileID: 2047571490132499247}
   _secondsBetwinOpenEye: 10
-  _secondsBetwinCloseEye: 5
+  _secondsBetwinCloseEye: 3
   _playerStopButtonsController: {fileID: 0}
 --- !u!1 &2047571490146683115
 GameObject:

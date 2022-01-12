@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8411296141613767452}
   - component: {fileID: 3817861161851170154}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Button 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 2671817247726369382}
   - component: {fileID: 1029188214965602554}
   m_Layer: 5
-  m_Name: Button (4)
+  m_Name: Button 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -288,7 +288,7 @@ GameObject:
   - component: {fileID: 6167398693571416244}
   - component: {fileID: 3369761136254897766}
   m_Layer: 5
-  m_Name: Button (5)
+  m_Name: Button 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -467,7 +467,6 @@ MonoBehaviour:
   _stopButtons:
   - {fileID: 8411296141613767452}
   - {fileID: 7048399385730520842}
-  - {fileID: 0}
   - {fileID: 4754776459356272304}
   - {fileID: 2671817247726369382}
   - {fileID: 6167398693571416244}
@@ -487,7 +486,7 @@ GameObject:
   - component: {fileID: 4754776459356272304}
   - component: {fileID: 6867765275411807766}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: Button 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -624,7 +623,7 @@ GameObject:
   - component: {fileID: 7048399385730520842}
   - component: {fileID: 24762590517704232}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Button 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

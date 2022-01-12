@@ -19,8 +19,10 @@ namespace Game {
         [SerializeField]
         private DifficultyProgressController _difficultyProgressController;
 
-        public void StartBraking() {
-            if (!_isBraking) {
+        public void StartBraking()
+        {
+            if (!_isBraking)
+            {
                 StartCoroutine(StopPlayerMiniGameCoroutine(_difficultyProgressController.DifficultyLevel));
             }
         }
@@ -45,6 +47,16 @@ namespace Game {
             foreach (var button in _stopButtons) {
                 button.gameObject.SetActive(true);
             }
+        }
+
+        public void DisativateButtons()
+        {
+            _activeButtonsInRound = _stopButtons.Count;
+            foreach (var button in _stopButtons)
+            {
+                button.gameObject.SetActive(false);
+            }
+
         }
 
         private void ActivateRandomButtons(int buttonsNumberToActivate) {
@@ -102,6 +114,7 @@ namespace Game {
                     if (gameObject != null && gameObject.TryGetComponent<StopButton>(out var stopButton))
                     {
                         stopButton.gameObject.SetActive(false);
+                       
                         _player.Stop(1f / _activeButtonsInRound);
                         return true;
                     }

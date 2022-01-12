@@ -521,6 +521,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5666853822232058453, guid: 8126d1e7627bde34ebe3cb5c725ac0f8, type: 3}
+      propertyPath: _cthulhu
+      value: 
+      objectReference: {fileID: 1664945879}
     - target: {fileID: 5666853822232058454, guid: 8126d1e7627bde34ebe3cb5c725ac0f8, type: 3}
       propertyPath: _cthulhu
       value: 
@@ -541,6 +545,10 @@ PrefabInstance:
     - target: {fileID: 6321990962015706187, guid: 7efa6f01b122a2c4d83fb24f6770fef6, type: 3}
       propertyPath: m_Name
       value: TabletsGenerator
+      objectReference: {fileID: 0}
+    - target: {fileID: 6321990962015706187, guid: 7efa6f01b122a2c4d83fb24f6770fef6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6321990962015706188, guid: 7efa6f01b122a2c4d83fb24f6770fef6, type: 3}
       propertyPath: m_RootOrder

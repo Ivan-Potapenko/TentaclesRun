@@ -13,7 +13,7 @@ namespace Game {
         private float _secondsBetwinOpenEye = 10f;
 
         [SerializeField]
-        private float _secondsBetwinCloseEye = 3f;
+        private float _secondsBetwinCloseEye = 10f;
 
         [SerializeField]
         private PlayerStopButtonsController _playerStopButtonsController;
@@ -34,6 +34,7 @@ namespace Game {
                 _playerStopButtonsController.StartBraking();
                 yield return new WaitForSeconds(_secondsBetwinCloseEye);
                 _cthulhu.CloseEye();
+                _playerStopButtonsController.DisativateButtons();
             }
         }
     }
