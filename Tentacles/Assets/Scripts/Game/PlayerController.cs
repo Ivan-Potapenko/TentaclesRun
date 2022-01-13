@@ -50,8 +50,11 @@ namespace Game {
         private void BehaviourUpdate() {
             GetInput();
             MovePlayer(_direction);
-            if ((_cthulhu.EyeIsOpen && !_player.IsWaiting()) || _player.MentalLevel <= 0) {
-
+            if(_player._fall = true)
+            { 
+                _cthulhu.PlayerDie = true;
+            }
+            if ((_cthulhu.EyeIsOpen && !_player.IsWaiting()) || _player.MentalLevel <= 0  ) {
                 _cthulhu.PlayerDie = true;
                 _player.Die();
                

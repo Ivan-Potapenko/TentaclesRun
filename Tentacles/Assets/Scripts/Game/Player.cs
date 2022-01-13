@@ -25,6 +25,8 @@ namespace Game {
         [SerializeField]
         private int _maxMentalLevel = 100;
 
+        public bool _fall = false;
+
         private int _mentalLevel;
         public int MentalLevel => _mentalLevel;
 
@@ -45,7 +47,7 @@ namespace Game {
 
         private void OnCollisionEnter2D(Collision2D collision) {
             if (collision.gameObject.TryGetComponent<LandBorder>(out var landBorder)) {
-                _cthulhu.PlayerDie = true;
+                _fall = true;
                 Fall();
 
             }
