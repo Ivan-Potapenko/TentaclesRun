@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Events;
+using Data;
 
 namespace Game {
 
@@ -10,20 +12,38 @@ namespace Game {
         private List<StopButton> _stopButtons;
 
         [SerializeField]
-        private Player _player;
+        private PlayerData _playerData;
+
+        [SerializeField]
+        private EventListener _playerDeadEventListener;
+
+        [SerializeField]
+        private EventListener _startBrakingEventListener;
 
         private int _activeButtonsInRound = 0;
 
         private bool _isBraking = false;
 
-        [SerializeField]
-        private DifficultyProgressController _difficultyProgressController;
+        public int DifficultyLevel => 3 - (((((int)_playerData.Player.MentalLevel) / 30) + 1) > 3 ? 3 :
+            ((((int)_playerData.Player.MentalLevel) / 30) + 1));
 
-        public void StartBraking()
-        {
-            if (!_isBraking && !_player._fall)
-            {
-                StartCoroutine(StopPlayerMiniGameCoroutine(_difficultyProgressController.DifficultyLevel));
+        private void OnEnable() {
+            _playerDeadEventListener.OnEventHappened += OnPlayerDead;
+            _startBrakingEventListener.OnEventHappened += StartBraking;
+        }
+
+        private void OnDisable() {
+            _playerDeadEventListener.OnEventHappened -= OnPlayerDead;
+            _startBrakingEventListener.OnEventHappened -= StartBraking;
+        }
+
+        private void OnPlayerDead() {
+            gameObject.SetActive(false);
+        }
+
+        public void StartBraking() {
+            if (!_isBraking) {
+                StartCoroutine(StopPlayerMiniGameCoroutine(DifficultyLevel));
             }
         }
 
@@ -49,11 +69,9 @@ namespace Game {
             }
         }
 
-        public void DisativateButtons()
-        {
+        public void DisativateButtons() {
             _activeButtonsInRound = _stopButtons.Count;
-            foreach (var button in _stopButtons)
-            {
+            foreach (var button in _stopButtons) {
                 button.gameObject.SetActive(false);
             }
 
@@ -74,7 +92,7 @@ namespace Game {
             _isBraking = true;
             var activeButtons = _activeButtonsInRound;
             while (activeButtons > 0) {
-                if (OnTouchClick()) {
+                if (CheckOnButton(activeButtons)) {
                     activeButtons--;
                 }
                 yield return null;
@@ -83,43 +101,48 @@ namespace Game {
             _isBraking = false;
         }
 
-        private bool OnButtonClick() {
+        private bool CheckOnButton(int activeButtons) {
+            if (PlatformController.IsInEditor) {
+                return OnButtonClick(activeButtons);
+            }
+            if (PlatformController.IsAndroidPlatform) {
+                return OnTouchClick(activeButtons);
+            }
+            return false;
+        }
+
+        private bool OnButtonClick(int activeButtons) {
             if (Input.GetMouseButtonDown(0)) {
                 var ray = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 var hit = Physics2D.Raycast(ray, Vector2.zero);
                 var gameObject = hit.collider?.gameObject;
-                if (gameObject!= null && gameObject.TryGetComponent<StopButton>(out var stopButton)) {
+                if (gameObject != null && gameObject.TryGetComponent<StopButton>(out var stopButton)) {
                     stopButton.gameObject.SetActive(false);
-                    _player.Stop(1f / _activeButtonsInRound);
+                    _playerData.Player.Stop(1f / _activeButtonsInRound, activeButtons == 1);
                     return true;
                 }
             }
             return false;
         }
 
-        private bool OnTouchClick()
-        {
-            if (Input.touchCount>0)
-            {
+        private bool OnTouchClick(int activeButtons) {
+            if (Input.touchCount > 0) {
                 var touches = Input.touches;
-                for (int i = 0; i <touches.Length ; i++)
-                {
-                    if (touches[i].phase != TouchPhase.Began)
-                    {
+                for (int i = 0; i < touches.Length; i++) {
+                    if (touches[i].phase != TouchPhase.Began) {
                         continue;
                     }
                     var ray = Camera.main.ScreenToWorldPoint(touches[i].position);
                     var hit = Physics2D.Raycast(ray, Vector2.zero);
                     var gameObject = hit.collider?.gameObject;
-                    if (gameObject != null && gameObject.TryGetComponent<StopButton>(out var stopButton))
-                    {
+                    if (gameObject != null && gameObject.TryGetComponent<StopButton>(out var stopButton)) {
                         stopButton.gameObject.SetActive(false);
-                       
-                        _player.Stop(1f / _activeButtonsInRound);
+
+                        _playerData.Player.Stop(1f / _activeButtonsInRound, activeButtons == 1);
                         return true;
                     }
                 }
-                
+
             }
             return false;
         }

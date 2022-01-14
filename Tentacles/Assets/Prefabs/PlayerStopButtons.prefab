@@ -421,6 +421,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8905316149949685501}
   - component: {fileID: 6503080971824715260}
+  - component: {fileID: 9109207047785999373}
+  - component: {fileID: 4050957712278873882}
   m_Layer: 5
   m_Name: PlayerStopButtons
   m_TagString: Untagged
@@ -470,8 +472,35 @@ MonoBehaviour:
   - {fileID: 4754776459356272304}
   - {fileID: 2671817247726369382}
   - {fileID: 6167398693571416244}
-  _player: {fileID: 0}
-  _difficultyProgressController: {fileID: 0}
+  _playerData: {fileID: 11400000, guid: dbc9994739e656a46b2640cd45105f06, type: 2}
+  _playerDeadEventListener: {fileID: 9109207047785999373}
+  _startBrakingEventListener: {fileID: 4050957712278873882}
+--- !u!114 &9109207047785999373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2461771225993660852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb85d35e87a0b3b45a2c0b8bc2cee388, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _someEvent: {fileID: 11400000, guid: 3b72ac170be1d164ca86404452f64725, type: 2}
+--- !u!114 &4050957712278873882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2461771225993660852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb85d35e87a0b3b45a2c0b8bc2cee388, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _someEvent: {fileID: 11400000, guid: fee39fddcceefa440a125100691a3316, type: 2}
 --- !u!1 &3190034026750857226
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,6 +17,9 @@ GameObject:
   - component: {fileID: 5666853822232058454}
   - component: {fileID: 5666853822232058455}
   - component: {fileID: 9163051079229754100}
+  - component: {fileID: 3900421972020327021}
+  - component: {fileID: 6590560994892477516}
+  - component: {fileID: 8092342830345367784}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -174,9 +177,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70458cd8204d4fc4eaafcf3db5af2555, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _currentPlayerState: 0
   _moveSpeed: 3
+  _stoppingRatio: 1
   _animator: {fileID: 9163051079229754100}
+  _balanceSettings: {fileID: 11400000, guid: 785cf2c154e89be4cbd6a3b5c9d01f1a, type: 2}
   _maxMentalLevel: 100
+  _deathEventDispatcher: {fileID: 8092342830345367784}
+  _cthulhuOpenedEyeEventListener: {fileID: 6590560994892477516}
+  _playerData: {fileID: 11400000, guid: dbc9994739e656a46b2640cd45105f06, type: 2}
+  _cthulhuClosedEyeEventListener: {fileID: 3900421972020327021}
 --- !u!114 &5666853822232058454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,9 +199,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad523c231db7994e824ce383f18476e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _joystick: {fileID: 0}
   _player: {fileID: 5666853822232058453}
   _cthulhu: {fileID: 0}
-  _updateEventListner: {fileID: 5666853822232058455}
+  _updateEventListener: {fileID: 5666853822232058455}
 --- !u!114 &5666853822232058455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,3 +235,42 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3900421972020327021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5666853822232058444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb85d35e87a0b3b45a2c0b8bc2cee388, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _someEvent: {fileID: 11400000, guid: 35aa05280ba21494f9465a81d128fe90, type: 2}
+--- !u!114 &6590560994892477516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5666853822232058444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb85d35e87a0b3b45a2c0b8bc2cee388, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _someEvent: {fileID: 11400000, guid: 0f97a24483378814889ee59c762ee518, type: 2}
+--- !u!114 &8092342830345367784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5666853822232058444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5ec3ac40cb9d4b4b9e9e55afb505c7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _someEvent: {fileID: 11400000, guid: 3b72ac170be1d164ca86404452f64725, type: 2}

@@ -89,6 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2027234450097198908}
   - component: {fileID: 2027234450097198909}
+  - component: {fileID: 6552170468905466053}
   m_Layer: 5
   m_Name: ScoreCounter
   m_TagString: Untagged
@@ -129,4 +130,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scoreText: {fileID: 2027234449806135440}
+  _playerDeadEventListener: {fileID: 6552170468905466053}
   _secondsToWait: 1
+--- !u!114 &6552170468905466053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027234450097198915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb85d35e87a0b3b45a2c0b8bc2cee388, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _someEvent: {fileID: 11400000, guid: 3b72ac170be1d164ca86404452f64725, type: 2}

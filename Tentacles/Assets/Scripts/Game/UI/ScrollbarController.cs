@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Events;
+using Data;
 
 namespace Game {
 
@@ -15,7 +14,7 @@ namespace Game {
         private EventListener _eventListener;
 
         [SerializeField]
-        private Player _player;
+        private PlayerData _playerData;
 
         private void OnEnable() {
             _eventListener.OnEventHappened += BehaviourUpdate;
@@ -26,7 +25,13 @@ namespace Game {
         }
 
         private void BehaviourUpdate() {
-            _scrollImage.fillAmount = _player.MentalLevel / 100f;
+            UpdateScrollbar();
+        }
+
+        private void UpdateScrollbar() {
+            if (_playerData.Player != null) {
+                _scrollImage.fillAmount = ((float)_playerData.Player.MentalLevel) / _playerData.Player.MaxMentalLevel;
+            }
         }
     }
 }

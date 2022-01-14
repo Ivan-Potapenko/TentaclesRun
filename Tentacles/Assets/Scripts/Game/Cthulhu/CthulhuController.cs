@@ -1,6 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Events;
 
 namespace Game {
 
@@ -16,7 +16,7 @@ namespace Game {
         private float _secondsBetwinCloseEye = 5f;
 
         [SerializeField]
-        private PlayerStopButtonsController _playerStopButtonsController;
+        private EventDispatcher _startBrakingEventDispatcher;
 
         private void OnEnable() {
             StartCoroutine(OpenEyeCoroutine());
@@ -27,14 +27,13 @@ namespace Game {
         }
 
         private IEnumerator OpenEyeCoroutine() {
-            while (!_cthulhu.PlayerDie) {
+            while (!_cthulhu.StopCthulhu) {
                 var randomWaitOffset = Random.Range(-_secondsBetwinOpenEye / 2, _secondsBetwinOpenEye / 5);
                 yield return new WaitForSeconds(_secondsBetwinOpenEye + randomWaitOffset);
                 _cthulhu.OpenEye();
-                _playerStopButtonsController.StartBraking();
+                _startBrakingEventDispatcher.Dispatch();
                 yield return new WaitForSeconds(_secondsBetwinCloseEye);
                 _cthulhu.CloseEye();
-                _playerStopButtonsController.DisativateButtons();
             }
         }
     }

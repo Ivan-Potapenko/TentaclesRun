@@ -170,7 +170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scrollImage: {fileID: 6242045448932215553}
   _eventListener: {fileID: 7243229925398950286}
-  _player: {fileID: 0}
+  _playerData: {fileID: 11400000, guid: dbc9994739e656a46b2640cd45105f06, type: 2}
 --- !u!114 &7243229925398950286
 MonoBehaviour:
   m_ObjectHideFlags: 0

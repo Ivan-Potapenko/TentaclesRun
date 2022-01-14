@@ -1,5 +1,4 @@
 using Events;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,10 +22,7 @@ namespace Game {
         private Player _player;
 
         [SerializeField]
-        private Cthulhu _cthulhu;
-
-        [SerializeField]
-        private EventListener _updateEventListner;
+        private EventListener _updateEventListener;
 
         private Dictionary<MoveDirection, KeyCode> _control = new Dictionary<MoveDirection, KeyCode> {
             {MoveDirection.Up, KeyCode.W},
@@ -40,45 +36,41 @@ namespace Game {
         private MoveDirection _moveDirection;
 
         private void OnEnable() {
-            _updateEventListner.OnEventHappened += BehaviourUpdate;
+            _updateEventListener.OnEventHappened += BehaviourUpdate;
         }
 
         private void OnDisable() {
-            _updateEventListner.OnEventHappened -= BehaviourUpdate;
+            _updateEventListener.OnEventHappened -= BehaviourUpdate;
         }
+
 
         private void BehaviourUpdate() {
             GetInput();
-            MovePlayer(_direction);
-            if(_player._fall == true)
-            { 
-                _cthulhu.PlayerDie = true;
-            }
-            if ((_cthulhu.EyeIsOpen && !_player.IsWaiting()) || _player.MentalLevel <= 0  ) {
-                _cthulhu.PlayerDie = true;
-                _player.Die();
-               
-            }
+            MovePlayer();
         }
 
-        private void GetInput() { 
-            //CheckKeyDown();
+        private void GetInput() {
+            CheckKeyDown();
             CheckJoystickDirection();
         }
 
-        private void CheckJoystickDirection()
-        {
+        private void CheckJoystickDirection() {
+            if(!PlatformController.IsAndroidPlatform) {
+                return;
+            }
             var direction = _joystick.Direction.normalized;
-            if (direction == Vector2.zero)
-            {
+            if (direction == Vector2.zero) {
                 return;
             }
             _direction = _joystick.Direction.normalized;
             _move = true;
-           
+
         }
 
         private void CheckKeyDown() {
+            if(!PlatformController.IsInEditor) {
+                return;
+            }
             foreach (var button in _control) {
                 if (!Input.GetKeyDown(button.Value)) {
                     continue;
@@ -91,10 +83,20 @@ namespace Game {
         private void SetMoveDirection(MoveDirection moveDirection) {
             _move = true;
             _moveDirection = moveDirection;
-
         }
 
         private void MovePlayer() {
+            if (PlatformController.IsInEditor) {
+                MovePlayerPC();
+                return;
+            }
+            if(PlatformController.IsAndroidPlatform) {
+                MovePlayerAndroid();
+                return;
+            }
+        }
+
+        private void MovePlayerPC() {
             if (!_move) {
                 return;
             }
@@ -114,13 +116,11 @@ namespace Game {
             }
         }
 
-        private void MovePlayer(Vector2 direction)
-        {
-            if (!_move)
-            {
+        private void MovePlayerAndroid() {
+            if (!_move) {
                 return;
             }
-             _player.Move(direction);
+            _player.Move(_direction);
         }
     }
 }

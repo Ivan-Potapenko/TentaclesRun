@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using Events;
 
 namespace Game {
 
@@ -11,21 +12,27 @@ namespace Game {
         private Text _scoreText;
 
         [SerializeField]
-        private Cthulhu _cthulhu;
+        private EventListener _playerDeadEventListener;
 
         [SerializeField]
         private float _secondsToWait = 1;
 
         private void OnEnable() {
             StartCoroutine(CountScore());
+            _playerDeadEventListener.OnEventHappened += OnPlayerDead;
         }
 
         private void OnDisable() {
             StopCoroutine(CountScore());
+            _playerDeadEventListener.OnEventHappened -= OnPlayerDead;
+        }
+
+        private void OnPlayerDead() {
+            StopCoroutine(CountScore());
         }
 
         private IEnumerator CountScore() {
-            while (!_cthulhu.PlayerDie) {
+            while (true) {
                 score++;
                 _scoreText.text = "Score:" + score.ToString();
                 yield return new WaitForSeconds(_secondsToWait);
