@@ -409,6 +409,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1356975401}
     - target: {fileID: 2047571490132499246, guid: fdb4548b329c8644290948db5fbaa350, type: 3}
+      propertyPath: _secondsBetwinCloseEye
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047571490132499246, guid: fdb4548b329c8644290948db5fbaa350, type: 3}
       propertyPath: _playerStopButtonsController
       value: 
       objectReference: {fileID: 777521442}

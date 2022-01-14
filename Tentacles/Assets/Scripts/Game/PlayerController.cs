@@ -50,7 +50,7 @@ namespace Game {
         private void BehaviourUpdate() {
             GetInput();
             MovePlayer(_direction);
-            if(_player._fall = true)
+            if(_player._fall == true)
             { 
                 _cthulhu.PlayerDie = true;
             }

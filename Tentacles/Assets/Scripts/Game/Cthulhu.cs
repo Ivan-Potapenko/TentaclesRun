@@ -15,6 +15,7 @@ namespace Game {
         private Player _player;
 
         public bool PlayerDie = false;
+        public bool PlayerFall = false;
 
         [SerializeField]
         private EventListener _updateEventListner;

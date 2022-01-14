@@ -21,7 +21,7 @@ namespace Game {
 
         public void StartBraking()
         {
-            if (!_isBraking)
+            if (!_isBraking && !_player._fall)
             {
                 StartCoroutine(StopPlayerMiniGameCoroutine(_difficultyProgressController.DifficultyLevel));
             }

@@ -13,7 +13,7 @@ namespace Game {
         private float _secondsBetwinOpenEye = 10f;
 
         [SerializeField]
-        private float _secondsBetwinCloseEye = 10f;
+        private float _secondsBetwinCloseEye = 5f;
 
         [SerializeField]
         private PlayerStopButtonsController _playerStopButtonsController;
